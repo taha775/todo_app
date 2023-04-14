@@ -1,0 +1,58 @@
+import React from "react";
+import { GrAdd } from 'react-icons/gr';
+import { RiAddCircleLine } from 'react-icons/ri';
+
+class App extends React.Component{
+    constructor(){
+        super()
+        this.state={
+            value:"",
+            todo:[]
+
+        }
+    }
+
+    handlevalue =(val)=>{
+        console.log(val)
+        this.setState({
+            value:val
+        })
+        
+    }
+
+    submit=()=>{
+        this.setState({
+          
+            todo:this.state.value
+        })
+
+        console.log(this.state.todo)
+
+    }
+
+    render(){
+        return(
+            <div>
+            <h1>Todo List</h1>
+            <input type="text" onChange={(e)=>this.handlevalue(e.target.value)} />
+            <button onClick={()=>this.submit()}>
+                <RiAddCircleLine style={{backgroundColor:"yellow"}}  size={40} color="red"/>
+            </button>
+            </div>
+        )
+    }
+}
+
+export default App;
+
+
+
+
+
+
+LIFECYCLE Component
+
+
+constructor >render > Componentdidmount 
+
+
